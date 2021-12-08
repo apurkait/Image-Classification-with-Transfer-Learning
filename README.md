@@ -1,1 +1,3 @@
-# Image-Classification-with-Transfer-Learning
+In this Project, all you have to do is upload any image you want to classify and then in home page, you will be having an option to choose the TL model you want to apply on it. After successful execution, the corresponding model will show the specific class related to the image.
+
+Note: Upload of more files in progress....
