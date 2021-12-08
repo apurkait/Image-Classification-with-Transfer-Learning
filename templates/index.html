@@ -1,0 +1,57 @@
+{% extends "parent.html" %} {% block content %}
+
+<h3>Predict the Object present in your image. Just select the image and give it a go!!!</h3>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="model_name">Select TL model to apply:</label>
+            <select id="model_name" name="model_name">
+                <optgroup label="VGG Models">
+                    <option value="vgg19" selected>VGG19</option>
+                </optgroup>
+                <optgroup label="ResNet Models">
+                    <option value="resnet50">ResNet50</option>
+                    <option value="resnet50v2">ResNet50V2</option>
+                    <option value="resnet101">ResNet101</option>
+                    <option value="resnet101v2">ResNet101V2</option>
+                    <option value="resnet152">ResNet152</option>
+                    <option value="resnet152v2">ResNet152V2</option>
+                </optgroup>
+                <optgroup label="Inception Models">
+                    <option value="inceptionv3">InceptionV3</option>
+                    <option value="inceptionresnetv2">InceptionResnetV2</option>
+                </optgroup>
+                <optgroup label="Dense Models">
+                    <option value="densenet121">DenseNet121</option>
+                    <option value="densenet169">DenseNet169</option>
+                    <option value="densenet201">DenseNet201</option>
+                </optgroup>
+            </select>
+        </div>
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+        <p><b>Note: </b>You can try using multiple classifiers as well.</p>
+    </form>
+
+    <div class="image-section">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div id="button_div">
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
